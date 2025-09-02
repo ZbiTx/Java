@@ -60,14 +60,14 @@ public class bankAccount {
         int num2 = rand.nextInt(9999 - 1000+1) + 1000;
         int num3 = rand.nextInt(9999 - 1000+1) + 1000;
         int num4 = rand.nextInt(9999 - 1000+1) + 1000;
-        accountNumber = String.valueOf(num) + " " + String.valueOf(num2) + " " + String.valueOf(num3) + " " + String.valueOf(num4);
+        accountNumber = (num) + " " + (num2) + " " + (num3) + " " + (num4);
         return accountNumber;
     }
     public static String sortCodeGen(String sortCode) {
         int num = rand.nextInt(99 - 10 + 1) + 10;
         int num2 = rand.nextInt(99 - 10 + 1) + 10;
         int num3 = rand.nextInt(99 - 10 + 1) + 10;
-        sortCode = String.valueOf(num) + "-" + String.valueOf(num2) + "-" + String.valueOf(num3);
+        sortCode = (num) + "-" + (num2) + "-" + (num3);
         return sortCode;
     }
     public static int cvvGen(int cvv) {
