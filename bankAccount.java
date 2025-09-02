@@ -1,3 +1,8 @@
+package com.example.demo;
+
+import com.example.demo.model.Item;
+import com.example.demo.service.ShoppingService;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -19,16 +24,28 @@ public class bankAccount {
             }
         }
     }
+    public static long getLongInput(String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            if (sc.hasNextLong()) {
+                long val = sc.nextLong();
+                sc.nextLine();
+                return val;
+            } else {
+                System.out.println("Invalid long value, please enter a number.");
+                sc.nextLine();
+            }
+        }
+    }
 
-    public static int deposit(int money) {
-        int depositVal = getIntInput("How much do you want to deposit into your account? ");
+    public static long deposit(long money) {
+        long depositVal = getLongInput("How much do you want to deposit into your account? ");
         money = money + depositVal;
         System.out.println("Deposit successful.");
-        System.out.println("Invalid integer, exiting deposit.");
         return money;
     }
-    public static int withdraw(int money) {
-        int withdrawVal = getIntInput("How much do you want to withdraw? ");
+    public static long withdraw(long money) {
+        long withdrawVal = getLongInput("How much do you want to withdraw? ");
         if (money < withdrawVal) {
             System.out.println("Insufficient funds.");
         } else {
@@ -77,7 +94,7 @@ public class bankAccount {
             UINlength = (int) (Math.log10(UIN) + 1);
         }
 
-        int money = 1000;
+        long money = 1000;
         String accountNumber = "";
         accountNumber = accountNumberGen(accountNumber);
         String sortCode = "";
@@ -147,3 +164,4 @@ public class bankAccount {
         sc.close();
     }
 }
+
